@@ -43,13 +43,12 @@ void displayBlocks() {
   for (int i = 0; i < rowCount; i++) {
     float containerVal = table.getFloat(i, 0);  // getting values for first column of each row
     //println(containerVal);
+    // put them in array? 
     float valMappedToColor = map(containerVal, dataMin, dataMax, 0, 255); //mapping max and min data values to color range
     println(valMappedToColor);
-    
+
     //fill(valMappedToColor);
     //rect(100, 100, 40, 40);
-    
-
   }
 }
 

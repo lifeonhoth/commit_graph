@@ -8,6 +8,9 @@
 Modified Aug 3, 2015 for github league by Fletcher Bach
  
  */
+ 
+import processing.pdf.*;
+ 
 int[] numbers;
 String[] colorList = {
     "fffff7f3",
@@ -31,16 +34,20 @@ color getColor(float f) {
 }
 
 void setup() {
-  size(1050, 105, P3D);
+  size(1051, 105, P3D);
   smooth();
   //loadData("fabpot2.csv");
   loadData("test.csv");
+  
+  beginRecord(PDF, "graph.pdf"); // begins PDF frame export
 }
 
 void draw() {
   background(0);
   colorMode(HSB);
   drawGrid(numbers, 7, 15);
+  
+  endRecord(); //ends PDF frame export 
 }
 
 void drawGrid(int[] nums, int cols, float s) {
@@ -62,4 +69,9 @@ void loadData(String fileName) {
   numbers = new int[rows.length];
   for (int i = 0; i < rows.length; i++) numbers[i] = int(rows[i]);  //skips enclosures/does same thing
 }
+
+
+
+
+
 

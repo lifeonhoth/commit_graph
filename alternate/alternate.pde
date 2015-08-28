@@ -11,7 +11,8 @@
 
 import processing.pdf.*;
 
-boolean setToExport = false; // set to "true" to export a pdf image
+String userName = "taylorotwell" + "graph"; //adjust username to fit csv
+boolean setToExport = true; // set to "true" to export a pdf image
 
 int[] numbers;
 String[] colorList = {
@@ -36,16 +37,16 @@ color getColor(float f) {
 }
 
 void setup() {
-  size(1051, 105, P3D);
+  size(796, 105, P3D);
   smooth();
-  loadData("brianchandotcom.csv");
+  loadData("taylorotwell.csv");
   //loadData("test.csv");
   
   exportPDF();
 }
 
 void draw() {
-  background(0);
+  background(255);
   colorMode(HSB);
   drawGrid(numbers, 7, 15);
 
@@ -74,7 +75,7 @@ void loadData(String fileName) {
 
 void exportPDF() {
   if (setToExport == true) {
-    beginRecord(PDF, "graph.pdf"); // begins PDF frame export
+    beginRecord(PDF, userName + ".pdf"); // begins PDF frame export
   } else {
     // do not export 
   }

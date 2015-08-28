@@ -5,7 +5,7 @@
  Feb 3, 2014
  - The CSV war.csv can be replaced with any csv
  
-Modified, Aug 3, 2015 for github league by Fletcher Bach
+Modified Aug 3, 2015 for github league by Fletcher Bach
  
  */
 int[] numbers;
@@ -31,7 +31,7 @@ color getColor(float f) {
 }
 
 void setup() {
-  size(640, 360, P3D);
+  size(1050, 105, P3D);
   smooth();
   //loadData("fabpot2.csv");
   loadData("test.csv");
@@ -40,15 +40,15 @@ void setup() {
 void draw() {
   background(0);
   colorMode(HSB);
-  drawGrid(numbers, 7, 50);
+  drawGrid(numbers, 7, 15);
 }
 
 void drawGrid(int[] nums, int cols, float s) {
   for (int i = 0; i < nums.length; i++) {
     //Draw every block in the grid
     int n = nums[i];
-    float x = (i % cols) * s;
-    float y = floor(i / cols) * s;
+    float y = (i % cols) * s;
+    float x = floor(i / cols) * s;
     //float c = map(n, 0, max(nums), 0, 255);
     //fill(c, 255, 255);
     color col = getColor(map(n,0,max(nums),0,1));
